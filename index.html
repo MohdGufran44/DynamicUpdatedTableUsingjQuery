@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <title>Student Details</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Jquery Registration Form with HTML5 and CSS3</h1>
+            </header>
+
+            <div class="form">
+                <form id="stReg" action="result.html" method="post">
+                    
+                    <input class="buttom" name="submit" id="submit" tabindex="5" value="Sign up!" type="submit">
+
+                </form>
+            </div>
+        </div>
+        <script>
+
+            $("form").submit(function () {
+                var formData = {
+                    'name' : $('input[name=name]').val(),
+                    'mobile' : $('input[name=phone]').val(),
+                    'email' : $('input[name=email]').val(),
+                    'gender' : $('select[name=gender]').val(),
+                };
+                localStorage.setItem('myStorage',JSON.stringify(formData));
+            });
+
+        </script>
+    </body>
+</html>
